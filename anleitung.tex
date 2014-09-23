@@ -10,8 +10,8 @@
 \usepackage{textcomp}
 \usepackage[ngerman]{babel}	%Wortdefinitionen
 \usepackage[a5paper,%
- left=20mm,%
- right=20mm,%
+ left=15mm,%
+ right=15mm,%
  top=20mm,%
  bottom=20mm]{geometry}
 \usepackage{fancyhdr}
@@ -31,28 +31,41 @@
 \begin{enumerate}
 \item Schließe den Freifunk-Router mit dem mitgelieferten Netzteil an das Stromnetz an.
 
+%
+% in neuer Version müsste nach Julians Änderungen alles über den WAN-Port konfigurierbar sein
+
 \item Stecke das mitgelieferte LAN-Kabel mit dem einen Ende in die \textbf{LAN}-Buchse deines Computers und mit dem anderen in eine \textbf{LAN}-Buchse des Freifunk-Routers.
 
 \item Rufe im Browser des Computers \textbf{192.168.1.1} auf. \label{webinterface}
 
 \item Konfiguriere deinen Freifunk-Router. 
 \begin{enumerate}
-  \item Setze ein Häkchen bei "`\textbf{Mesh-VPN aktivieren}"' um den Freifunk-Router über das Internet mit dem Freifunknetz zu verbinden. \label{vpn-mesh-aktivieren} \footnote{Einen Zugang zum Internet kann der Freifunk-Router nur bereitstellen, wenn dieser mit dem Freifunk-Netz verbunden ist. Mit dem Freifunk-Netz kann der Router per Mesh-VPN (erfordert eigenen Internetzugang) oder Mesh (erfordert Freifunk-Knoten in Reichweite des Geräts) verbunden werden.}
+
+%
+% folgendes item sollte mit Julians Version default werden und dürfte daher entfallen
+  \item Setze ein Häkchen bei \glqq{}\textbf{Mesh-VPN aktivieren}\grqq{} um den Freifunk-Router über das Internet mit dem Freifunknetz zu verbinden. \label{vpn-mesh-aktivieren} \footnote{Einen Zugang zum Internet kann der Freifunk-Router nur bereitstellen, wenn dieser mit dem Freifunk-Netz verbunden ist. Mit dem Freifunk-Netz kann der Router per Mesh-VPN (erfordert eigenen Internetzugang) oder Mesh (erfordert Freifunk-Knoten in Reichweite des Gerätes) verbunden werden.}
   
-  \item Optional können Geokoordinaten\footnote{Dessen Ermittlung kannst du z.B. mit Hilfe des Teilen-Werkzeuges von osm.org vornehmen.} für den Standort des Freifunk-Routers und eine E-Mail-Adresse angegeben werden.
+  \item Optional können Geokoordinaten\footnote{Mit Hilfe des Werkzeugs \textit{Koordinaten beim nächsten Klicken anzeigen} der Knotenkarte auf bremen.freifunk.net ermittelbar.} für den Standort des Freifunk-Routers und eine E-Mail-Adresse angegeben werden.
 
-  \item Klicke unten rechts auf "Fertig". 
+  \item Klicke unten rechts auf \glqq{}Fertig\grqq{} und lasse die Konfigurationsseite geöffnet. \label{fertig}
 
-  \textit{Die Konfigurationsseite des Freifunk-Routers ist anschließend nicht mehr erreichbar.} \footnote{Durch 3-5 sekündiges Drücken der Reset-Taste wird der Konfigurationsmodus des Routers wieder aktiviert. Anschließend kann wie in Schritt \ref{webinterface} fortgefahren werden.}
+  \textit{Die Konfigurationsseite des Freifunk-Routers ist nun nicht mehr erreichbar.} \footnote{Durch 3-5 sekündiges Drücken der Reset-Taste wird der Konfigurationsmodus des Routers wieder aktiviert. Anschließend kann wie in Schritt \ref{webinterface} fortgefahren werden.}
 \end{enumerate}
 
 \item Entferne nun das LAN-Kabel.
 
-\item Wenn für "`Mesh-VPN aktivieren"' in Schritt \ref{vpn-mesh-aktivieren} kein Haken gesetzt wurde, fahre mit Schritt \ref{platzieren} fort. 
 
-\item Stecke das LAN-Kabel mit dem einen Ende in die \textbf{WAN}-Buchse deines Freifunk-Routers und mit dem anderen in eine \textbf{LAN}-Buchse deines Routers, der Verbindung zum Internet hat.\footnote{Der Freifunk-Router verbindet sich so per VPN (über das Internet) mit dem übrigen Freifunk Bremen Intranet.}
+%
+% in neuer Version von Julian: Entferne nun das LAN-Kabel vom Computer und stecke es ggf. in eine LAN-Buchse deines Routers. -footnote-
+
+\item Falls für \glqq{}Mesh-VPN aktivieren\grqq{} in Schritt \ref{vpn-mesh-aktivieren} ein Haken gesetzt wurde, stecke das LAN-Kabel mit dem einen Ende in die \textbf{WAN}-Buchse deines Freifunk-Routers und mit dem anderen in eine \textbf{LAN}-Buchse deines Routers, der Verbindung zum Internet hat.\footnote{Der Freifunk-Router verbindet sich so per VPN (Virtual Private Network) über das Internet mit dem übrigen Freifunk Bremen Intranet.}
 
 \item Platziere den Freifunk-Router an einem Ort deiner Wahl. \label{platzieren}
+
+%
+% folgender Item entfällt (sofern ich das nicht falsch verstehe), wenn der Public-Key von fastd bereits beim Flashen an den Server übermittelt worden ist.
+
+\item Folge den Instruktionen der Seite aus Schritt \ref{fertig}, sobald der Computer wieder eine Verbindung zum Internet hat.
 
 \item Fertig!
 \end{enumerate}
